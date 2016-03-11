@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/testclient" docBase="testclient"
+        reloadable="true" crossContext="true">
+
+<Resource name="jdbc/fanhoservicesDB" auth="Container" type="javax.sql.DataSource" maxActive="100" maxIdle="30" maxWait="10000" username="root" password="52473E44" driverClassName="com.mysql.jdbc.Driver"
+               url="jdbc:mysql://localhost:3391/fanhoservices"
+               removeAbandoned="true"
+               removeAbandonedTimeout="60"
+	       logAbandoned="true" />
+
+</Context>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/FANHOLIB"/>
+	<classpathentry kind="lib" path="lib2/astyanax-1.56.44.jar"/>
+	<classpathentry kind="lib" path="lib2/astyanax-cassandra-1.56.28.jar"/>
+	<classpathentry kind="lib" path="lib2/astyanax-cassandra-1.56.44.jar"/>
+	<classpathentry kind="lib" path="lib2/astyanax-core-1.56.44.jar"/>
+	<classpathentry kind="lib" path="lib2/astyanax-entity-mapper-1.56.44.jar"/>
+	<classpathentry kind="lib" path="lib2/astyanax-recipes-1.56.44.jar"/>
+	<classpathentry kind="lib" path="lib2/astyanax-thrift-1.56.44.jar"/>
+	<classpathentry kind="lib" path="lib2/cassandra-all-2.0.4.jar"/>
+	<classpathentry kind="lib" path="lib2/cassandra-clientutil-2.0.4.jar"/>
+	<classpathentry kind="lib" path="lib2/cassandra-thrift-2.0.4.jar"/>
+	<classpathentry kind="lib" path="lib2/guava-16.0.jar"/>
+	<classpathentry kind="lib" path="lib2/high-scale-lib-1.1.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="0.809" errors="0" skipped="6" tests="6" name="org.springframework.security.oauth2.provider.TestAdminEndpoints">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib"/>
+    <property name="java.vm.version" value="24.0-b56"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/faizalsheriff/MyPlace/mydownloads/spring-security-oauth-2.0.0.M2/samples/oauth2/sparklr"/>
+    <property name="java.runtime.version" value="1.7.0_40-b43"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/70/lb5qwyks16164hsdtyhm3wx40000gn/T/"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/Users/faizalsheriff/MyPlace/myprogramfiles/apache-maven-3.1.1/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/faizalsheriff/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.9.1"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/faizalsheriff"/>
+    <property name="user.timezone" value="America/Chicago"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="faizalsheriff"/>
+    <property name="java.class.path" value="/Users/faizalsheriff/MyPlace/myprogramfiles/apache-maven-3.1.1/boot/plexus-classworlds-2.5.1.jar"/>
+    <property name="org.slf4j.simpleLogger.defaultLogLevel" value="debug"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -X package"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.7.0_40"/>
+    <property name="java.ext.dirs" value="/Users/faizalsheriff/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/lib/JObjC.jar:/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/jre/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/Users/faizalsheriff/MyPlace/myprogramfiles/apache-maven-3.1.1"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase time="0.714" classname="org.springframework.security.oauth2.provider.TestAdminEndpoints" name="testListTokensByUser">
+    <skipped/>
+    <system-err>sparklr2 19:43:00.233 [DEBUG] RestTemplate - Created GET request for &quot;http://localhost:8080/sparklr2/login.jsp&quot;
+sparklr2 19:43:00.247 [DEBUG] RestTemplate - Setting request Accept header to [text/plain, application/json, application/*+json, */*]
+sparklr2 19:43:00.269 [WARN] RestTemplate - GET request for &quot;http://localhost:8080/sparklr2/login.jsp&quot; resulted in 404 (Not Found); invoking error handler
+sparklr2 19:43:00.277 [WARN] ServerRunning - Not executing tests because basic connectivity test failed for hostName=localhost, port=8080 &lt;org.springframework.web.client.HttpClientErrorException: 404 Not Found&gt;org.springframework.web.client.HttpClientErrorException: 404 Not Found
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:88)
+	at org.springframework.web.client.RestTemplate.handleResponseError(RestTemplate.java:537)
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:493)
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:452)
+	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:244)
+	at org.springframework.security.oauth2.provider.ServerRunning.apply(ServerRunning.java:139)
+	at org.junit.runners.BlockJUnit4ClassRunner.withRules(BlockJUnit4ClassRunner.java:354)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:270)
+	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+
+</system-err>
+  </testcase>
+  <testcase time="0.027" classname="org.springframework.security.oauth2.provider.TestAdminEndpoints" name="testRevokeTokenByUser">
+    <skipped/>
+  </testcase>
+  <testcase time="0.016" classname="org.springframework.security.oauth2.provider.TestAdminEndpoints" name="testClientListsTokensOfUser">
+    <skipped/>
+  </testcase>
+  <testcase time="0.015" classname="org.springframework.security.oauth2.provider.TestAdminEndpoints" name="testCannotListTokensOfAnotherUser">
+    <skipped/>
+  </testcase>
+  <testcase time="0.019" classname="org.springframework.security.oauth2.provider.TestAdminEndpoints" name="testListTokensByClient">
+    <skipped/>
+  </testcase>
+  <testcase time="0.018" classname="org.springframework.security.oauth2.provider.TestAdminEndpoints" name="testUserCannotListTokensOfClient">
+    <skipped/>
+  </testcase>
+</testsuite>

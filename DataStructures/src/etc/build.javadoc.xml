@@ -1,0 +1,75 @@
+<project name="javadoc">
+
+	<property name="doc.header" value="${proj.name}"/>
+	<property name="doc.footer" value="Copyright Rockwell Collins &#169; 2008 All Rights Reserved."/>
+
+	<target name="javadoc" if="proj.dir.reports.docs">
+
+		<condition property="umlgraph.exists">
+			<and>
+				<isset property="umlgraph.doclet.class"/>
+				<isset property="umlgraph.doclet.path"/>
+			</and>
+		</condition>
+
+		<antcall target="javadoc-with-umlgraph"/>
+		<antcall target="javadoc-without-umlgraph"/>
+
+	</target>
+
+	<target name="javadoc-without-umlgraph" unless="umlgraph.exists">
+		<mkdir dir="${proj.dir.reports.docs}"/>
+		<chmod dir="${proj.dir.reports.docs}" perm="757"/>
+		<javadoc 
+			sourcepath="${proj.dir.src}" 
+			packagenames="*" 
+			destdir="${proj.dir.reports.docs}" 
+			private="true" 
+			verbose="false">
+			<doctitle>
+				<![CDATA[<h1>${doc.header}</h1>]]>
+			</doctitle>
+			<bottom>
+				<![CDATA[<i>${doc.footer}</i>]]>
+			</bottom>
+		</javadoc>
+	</target>
+
+	<target name="javadoc-with-umlgraph" if="umlgraph.exists">
+		<mkdir dir="${proj.dir.reports.docs}"/>
+		<chmod dir="${proj.dir.reports.docs}" perm="757"/>
+		<javadoc 
+			sourcepath="${proj.dir.src}" 
+			packagenames="*" 
+			destdir="${proj.dir.reports.docs}" 
+			private="true" 
+			verbose="false">
+			<doclet name="${umlgraph.doclet.class}" path="${umlgraph.doclet.path}">
+				<!--
+				<param name="-attributes"/>
+				<param name="-operations"/>
+				<param name="-constructors"/>
+				<param name="-types"/>
+				<param name="-enumerations"/>
+				<param name="-enumconstants"/>
+				<param name="-all"/>
+				-->
+				<param name="-visibility"/>
+				<param name="-inferrel"/>
+				<param name="-inferdep"/>
+				<param name="-hide" value="java.*"/>
+				<param name="-collpackages" value="java.util.*"/>
+				<param name="-qualify"/>
+				<param name="-postfixpackage"/>
+				<param name="-nodefontsize" value="9"/>
+				<param name="-nodefontpackagesize" value="7"/>
+			</doclet>
+			<doctitle>
+				<![CDATA[<h1>${doc.header}</h1>]]>
+			</doctitle>
+			<bottom>
+				<![CDATA[<i>${doc.footer}</i>]]>
+			</bottom>
+		</javadoc>
+	</target>
+</project>

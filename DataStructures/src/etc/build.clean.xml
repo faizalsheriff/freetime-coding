@@ -1,0 +1,15 @@
+<project name="clean">
+	
+	<target name="clean" description="remove proj intermediate files">
+
+		<delete dir="${proj.dir.classes}"/>
+		<delete dir="${proj.dir.build}"/>
+		<delete dir="${proj.dir.reports.docs}"/>
+		<delete dir="${proj.dir.reports.stats}"/>
+		<delete dir="${proj.dir.reports}"/>
+		<delete dir="${proj.dir.logs}"/>
+		<delete dir="${proj.dir.dist}"/>
+
+	</target>
+
+</project>

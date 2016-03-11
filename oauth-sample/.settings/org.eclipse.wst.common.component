@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="oauth-sample">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/tonor/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/tonor/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/tonor/src/main/webapp"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/tonor/src/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/sparklr/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/sparklr/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/sparklr/src/main/webapp"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/sparklr/src/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/oauth2/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/oauth2/src/main/webapp"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/oauthspring/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/oauthspring/src/main/resources"/>
+        <property name="context-root" value="oauth-sample"/>
+        <property name="java-output-path" value="/oauth-sample/build/classes"/>
+    </wb-module>
+</project-modules>

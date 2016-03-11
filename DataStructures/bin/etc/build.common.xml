@@ -1,0 +1,42 @@
+<project name="common">
+
+	<!-- shell environment -->
+	<property environment="env"/>
+
+	<!-- root directory of project in relation to the initial build.xml file -->
+	<property name="proj.dir.root" value="."/>
+
+	<!-- java source directory -->
+	<property name="proj.dir.src" value="${proj.dir.root}/src"/>
+
+	<!-- output of compiled java classes -->
+	<property name="proj.dir.classes" value="${proj.dir.root}/build/classes"/>
+
+	<!-- directory to the documents such as README files -->
+	<property name="proj.dir.docs" value="${proj.dir.root}/docs"/>
+
+	<!-- build directory, used to hold temporary build output -->
+	<property name="proj.dir.build" value="${proj.dir.root}/build"/>
+
+	<!-- generated reports from the build -->
+	<property name="proj.dir.reports" value="${proj.dir.root}/reports"/>
+
+	<!-- generated statistics from the build -->
+	<property name="proj.dir.reports.stats" value="${proj.dir.root}/reports/stats"/>
+
+	<!-- generated documents from the build -->
+	<property name="proj.dir.reports.docs" value="${proj.dir.root}/reports/docs"/>
+
+	<!-- logs generated from build -->
+	<property name="proj.dir.logs" value="${proj.dir.root}/logs"/>
+
+	<!-- library and dependencies used by project necissary for build -->
+	<property name="proj.dir.lib" value="${proj.dir.root}/lib"/>
+
+	<!-- location of test applications (unit test) -->
+	<property name="proj.dir.test" value="${proj.dir.root}/test"/>
+
+	<!-- destination of the distributable build -->
+	<property name="proj.dir.dist" value="${proj.dir.root}/dist"/>
+
+</project>

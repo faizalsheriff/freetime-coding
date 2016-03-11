@@ -1,0 +1,41 @@
+<project name="hcms" default="compile" basedir=".">
+
+	<!-- ****************************************** -->
+	<!-- **            Configuration             ** -->
+	<!-- ****************************************** -->
+
+	<!-- name of the projected -->
+	<property name="proj.name" value="core.framework"/>
+
+	<!-- version of the java runtime -->	
+	<property name="java.source" value="1.5"/>
+	<property name="java.target" value="1.5"/>
+	
+	<!-- ****************************************** -->
+	<!-- **               Imports                ** -->
+	<!-- ****************************************** -->
+
+	<import file="etc/build.common.xml"/>
+	<import file="etc/build.clean.xml"/>
+	<import file="etc/build.compile.xml"/>
+	<import file="etc/build.jar.xml"/>
+	<import file="etc/build.javadoc.xml"/>
+	
+	<!-- ****************************************** -->
+	<!-- **              UML Graph               ** -->
+	<!-- ****************************************** -->
+	
+	<property name="umlgraph.doclet.class" value="org.umlgraph.doclet.UmlGraphDoc"/>
+	<property name="umlgraph.doclet.path" value="/usr/share/ant/lib/UmlGraph.jar"/>
+	<property name="umlgraph.exists" value="true"/>
+
+	<!-- ****************************************** -->
+	<!-- **               Targets                ** -->
+	<!-- ****************************************** -->
+
+	<target name="clean" depends="clean.clean"/>
+	<target name="compile" depends="compile.compile"/>
+	<target name="jar" depends="jar.jar"/>
+	<target name="javadoc" depends="javadoc.javadoc"/>
+
+</project>

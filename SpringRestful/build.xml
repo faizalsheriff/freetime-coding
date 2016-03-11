@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="mywinks" basedir="." default="build">
+    
+    <property file="build.properties"/>
+    
+    <path id="compile.path">
+        <fileset dir="${lib.dir}" includes="*.jar"/>
+    	<fileset dir="${faizal_local_lib.dir}" includes="*.jar"/>
+    </path>
+    
+    <target name="clean" description="delete all class files in the package ">
+        <delete dir="${build.dir}"/>
+        <delete file="${war.name}"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="src" destdir="${classes.dir}" classpathref="compile.path" debug="on" target="1.5"/>
+    </target>
+    
+    <target name="-copy-resources" description="copy non java config files to classes">
+        <copy todir="${classes.dir}">
+            <fileset dir="${src.dir}">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    
+    <target name="war" depends="clean,compile,-copy-resources" description="Create a war archive file for deployment">
+        <war destfile="${war.name}" webxml="webinf/web.xml">
+           
+            <lib dir="${lib.dir}"/>
+            <webinf dir="${webinf.dir}">
+                <exclude name="web.xml" />
+            </webinf>
+            <classes dir="${classes.dir}"/>
+        </war>
+        <echo message="${war.name} generated"/>
+    </target>
+
+    <target name="build" depends="war">
+        <echo message="Build ${app.name} complete ...."/>
+    </target>
+    
+    <target name="deploy" depends="war" description="Deploy in Tomcat">
+    
+        <copy file="${deploy.file.name}" todir="${tomcat.home}/webapps"/>
+        <echo message="${app.name} is deployed"/>
+    </target>
+
+    <target name="-checkapp" description="Set if application is already present">
+        <condition property="app.deployed">
+            <and>
+                <available file="${deploy.dir}/${war.name}"/>
+            </and>
+        </condition>
+    </target>
+    
+    <target name="undeploy" depends="-checkapp" if="app.deployed" description="Undeploy application from tomcat">
+        <taskdef name="undeploy" classname="org.apache.catalina.ant.UndeployTask"/>
+        <undeploy url="${manager.url}"
+        username="${manager.username}"
+        password="${manager.password}"
+        path="/${app.name}" />
+        <echo message="${app.name} is undeployed"/>
+    </target>
+    
+    <target name="runSingleTest" description="Run a single test" depends="compile,-copy-resources">
+        <java fork="true" classname="SimpleTest" classpathref="compile.path"/>
+    </target>
+    
+</project>

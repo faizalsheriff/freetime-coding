@@ -1,0 +1,37 @@
+<project name="jar">
+
+	<target name="jar">
+
+		<mkdir dir="${proj.dir.dist}"/>
+
+		<chmod dir="${proj.dir.dist}" perm="757"/>
+
+		<condition property="proj.file.jar" value="${proj.name}.${proj.version}.${proj.revision}.jar">
+			<and>
+				<not><isset property="proj.file.jar"/></not>
+				<isset property="proj.revision"/>
+				<not><equals arg1="${proj.revision}" arg2=""/></not>
+				<isset property="proj.version"/>
+				<not><equals arg1="${proj.version}" arg2=""/></not>
+			</and>
+		</condition>
+
+		<condition property="proj.file.jar" value="${proj.name}.${proj.revision}.jar">
+			<and>
+				<not><isset property="proj.file.jar"/></not>
+				<isset property="proj.revision"/>
+				<not><equals arg1="${proj.revision}" arg2=""/></not>
+			</and>
+		</condition>
+
+		<condition property="proj.file.jar" value="${proj.name}.jar">
+			<not><isset property="proj.file.jar"/></not>
+		</condition>
+
+		<jar destfile="${proj.dir.dist}/${proj.file.jar}">
+			<fileset dir="${proj.dir.classes}" includes="**/*.class"/>
+		</jar>
+	
+	</target>
+
+</project>

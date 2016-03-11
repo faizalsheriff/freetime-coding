@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!-- scan services only - this is the service layer application context -->
+    <context:component-scan base-package="com.hp.example.services"/>
+
+    <!-- define an in-memory database data source (this is an example application, in a real one you'd use a proper
+         data source -->
+    <!--<jdbc:embedded-database id="dataSource" type="H2"/>-->
+	
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+    <property name="jndiName" value="java:comp/env/jdbc/fanhoservicesDB"/>
+    </bean>
+
+    <!-- the JPA transaction manager - connected to the EMF -->
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
+          p:entityManagerFactory-ref="emf"
+          p:dataSource-ref="dataSource"/>
+
+    <!-- the entity manager factory (EMF) -->
+    <bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+          p:dataSource-ref="dataSource"
+          p:packagesToScan="com.hp.example"
+            >
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" p:generateDdl="true"
+                  p:showSql="true"/>
+        </property>
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.format_sql">true</prop>
+                <prop key="hibernate.cache.use_query_cache">false</prop>
+                <prop key="hibernate.generate_statistics">false</prop>
+                <prop key="hibernate.cache.use_second_level_cache">false</prop>
+                <prop key="hibernate.jdbc.fetch_size">100</prop>
+                <prop key="hibernate.jdbc.batch_size">500</prop>
+                <prop key="hibernate.order_updates">true</prop>
+                <prop key="hibernate.order_inserts">true</prop>
+                <prop key="hibernate.default_batch_fetch_size">20</prop>
+                <prop key="hibernate.hbm2ddl.auto">create</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- spring transaction support -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <!-- spring-data-jpa repositories support -->
+    <jpa:repositories base-package="com.hp.example.repositories"/>
+</beans>

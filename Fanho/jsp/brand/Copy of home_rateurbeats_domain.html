@@ -1,0 +1,78 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <!--Mobile Tags-->
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width">
+    <!--Load CND Hosted Resources-->
+    <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/img/fevi-icon-small.jpg"/>
+    <link rel="stylesheet" href="http://www.rateurbeats.com/mywinks_sprt_files _new_look/1.2.0/jquery.mobile-1.2.0.min.css" />
+    <script src="http://www.rateurbeats.com/mywinks_sprt_files _new_look/jquery-1.8.2.min.js"></script>
+    <script src="http://www.rateurbeats.com/mywinks_sprt_files _new_look/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    
+    <script type="text/javascript">
+    function shareFacebook(url,name,caption,description,img,redirurll)
+	{
+		var appid = "377002272362737";
+		var redirecturi = redirurll;
+		var uri = "https://www.facebook.com/dialog/feed?app_id="+appid+"&link="+encodeURIComponent(url)+"&redirect_uri="+encodeURIComponent(url)+"&caption="+encodeURIComponent(caption)+"&description="+encodeURIComponent(description)+"&name="+encodeURIComponent(name)+"&picture="+encodeURIComponent(img);
+				newwindow=window.open(uri,'Share','status=0,toolbar=0,location=0,menubar=0,height=500,width=800,resizable=1');
+				if (window.focus) {newwindow.focus()}
+				return false;
+	}
+	function shareTwitter(url,text)
+	{
+		var uri = "http://www.twitter.com/share?url="+encodeURIComponent(url)+"&text="+encodeURIComponent(text)+"&counturl="+encodeURIComponent(url);
+				newwindow=window.open(uri,'Share','status=0,toolbar=0,location=0,menubar=0,height=500,width=800,resizable=1');
+				if (window.focus) {newwindow.focus()}
+				return false;
+	}
+	
+
+	function postAjax(){
+		 //$.mobile.loading( 'show');
+		 
+		 var values= "code=4/kaDgiBYcUa9Eezac4yLfK9PHRc8v.Ind30Y4Xg9MeshQV0ieZDAqagQOffQI" +
+	        "&client_id=650214226023.apps.googleusercontent.com" +
+	        "&client_secret={ZSqZGfv1dGBJPiBRp5mE3oDP}"+
+	        "&redirect_uri=https://www.myhonks.com/oauth2callback" +
+	        "&grant_type=authorization_code" ;
+		 $.ajax({
+		        url: "https://accounts.google.com/o/oauth2/token",
+		        dataType: "html",
+		        type: "post",
+		        data: values,
+		        success: function(result){
+		        	alert(result);
+		        }
+		    });
+		 
+			//$.mobile.silentScroll(0);
+	}
+
+  </script>
+ 
+</head>
+<body>
+<div id="home" data-role="page">
+  
+      
+    <div id="homecontent" data-role="content">
+		<h1 style="color: rgba(23,155,230,0.81); text-shadow: 0px 0px; font-family: DINMedium; font-size: 30px; line-height: 30px; padding: 0; margin: 8px 0px;">Welcome to My Winks</h1>
+		<p style="color: rgb(255, 255, 255); text-shadow: 0px 0px; font-family: DINMedium; font-size: 17px; line-height: 20px; margin-top: 4px;font-weight:bold">Connects you with congress leaders, media and others to lead our tomorrow</p>
+		
+	<p style="margin-top:180px;">
+            <a class="signinbtn" href="#" onclick="postAjax()" style="" data-mini="true" data-inline="true"data-role="button">Sign In</a>
+            
+			</p>
+     </div>
+        
+   
+       
+</div>
+    
+</body>
+</html>

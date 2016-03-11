@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/FANHOLIB"/>
+	<classpathentry kind="lib" path="src/lib/commons-codec-1.6.jar"/>
+	<classpathentry kind="lib" path="src/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="src/lib/fluent-hc-4.2.5.jar"/>
+	<classpathentry kind="lib" path="src/lib/httpclient-4.2.5.jar"/>
+	<classpathentry kind="lib" path="src/lib/httpclient-cache-4.2.5.jar"/>
+	<classpathentry kind="lib" path="src/lib/httpcore-4.2.4.jar"/>
+	<classpathentry kind="lib" path="src/lib/httpmime-4.2.5.jar"/>
+	<classpathentry kind="lib" path="lib/gson-2.2.2.jar"/>
+	<classpathentry kind="lib" path="lib/astaynax-fanho.jar"/>
+	<classpathentry kind="lib" path="lib/astyanax-1.56.44.jar"/>
+	<classpathentry kind="lib" path="lib/astyanax-cassandra-1.56.28.jar"/>
+	<classpathentry kind="lib" path="lib/astyanax-cassandra-1.56.44.jar"/>
+	<classpathentry kind="lib" path="lib/astyanax-core-1.56.44.jar"/>
+	<classpathentry kind="lib" path="lib/astyanax-entity-mapper-1.56.44.jar"/>
+	<classpathentry kind="lib" path="lib/astyanax-recipes-1.56.44.jar"/>
+	<classpathentry kind="lib" path="lib/astyanax-thrift-1.56.44.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-all-2.0.4.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-clientutil-2.0.4.jar"/>
+	<classpathentry kind="lib" path="lib/cassandra-thrift-2.0.4.jar"/>
+	<classpathentry kind="lib" path="lib/fluent-hc-4.2.5.jar"/>
+	<classpathentry kind="lib" path="lib/guava-16.0.jar"/>
+	<classpathentry kind="lib" path="lib/high-scale-lib-1.1.2.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient-4.2.5.jar"/>
+	<classpathentry kind="lib" path="lib/httpclient-cache-4.2.5.jar"/>
+	<classpathentry kind="lib" path="lib/httpcore-4.2.4.jar"/>
+	<classpathentry kind="lib" path="lib/httpmime-4.2.5.jar"/>
+	<classpathentry kind="lib" path="lib/reflections-spring-0.9.9-RC1.jar"/>
+	<classpathentry kind="lib" path="lib/reflections-0.9.9-RC1-uberjar.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/FanhoServices"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
